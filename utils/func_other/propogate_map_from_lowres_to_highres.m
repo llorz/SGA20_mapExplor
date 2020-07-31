@@ -1,0 +1,13 @@
+function [T12_final, T21_final, S1, S2] = propogate_map_from_lowres_to_highres(s1_name, s2_name, T12, T21, dt_dir)
+
+T12_ = transfer_map_via_nn(T12, s1_name, s2_name,...
+    [dt_dir, 'remeshed/'], [dt_dir, 'original_fixed_normalized/']);
+[T12_final, S1, S2]= transfer_map_via_nn(T12_, s1_name, s2_name, ...
+    [dt_dir, 'original_fixed/'], [dt_dir, 'original/']);
+
+T21_ = transfer_map_via_nn(T21, s2_name, s1_name,...
+    [dt_dir, 'remeshed/'], [dt_dir, 'original_fixed_normalized/']);
+T21_final = transfer_map_via_nn(T21_, s2_name, s1_name, ...
+    [dt_dir, 'original_fixed/'], [dt_dir, 'original/']);
+
+end
