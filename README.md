@@ -1,13 +1,11 @@
-<p align="center">
-  <img align="center"  src="/figs/teaser_gravgen_v2.png">
-</p>
-
-
 # MapTree: Recovering Multiple Solutions in the Space of Maps
 This is an example code for the paper "MapTree: Recovering Multiple Solutions in the Space of Maps" by Jing Ren, Simone Melzi, Maks Ovsjanikov, and Peter Wonka.
 
 In this paper we propose an approach for computing **multiple** high-quality near-isometric maps between a pair of 3D shapes. Our method is fully automatic and does not rely on user-provided landmarks or descriptors. This allows us to analyze the full space of maps and extract multiple diverse and accurate solutions, rather than optimizing for a single optimal correspondence as done in previous approaches. 
 
+<p align="center">
+  <img align="center"  src="/figs/teaser_gravgen_v2.png", width=800>
+</p>
 
 Main Functions
 --------------------
