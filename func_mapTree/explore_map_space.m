@@ -10,8 +10,8 @@ func_lapComm = @(C12, Ev1, Ev2) norm(C12*diag(Ev1(1:size(C12, 2))) - diag(Ev2(1:
 func_ortho = @(C) norm(C'*C - eye(size(C,2)),'fro')/sqrt(size(C,1));
 func_find_deepest_nodes = @(tree)find(arrayfun(@(l_id)tree.getNodeDepth(l_id), tree.findleaves) == tree.depth);
 
-const = abs(sum(S2.evecs(:,1))/sum(S1.evecs(:,1)));
-C12_ini = sum(S2.evecs(:,1))/sum(S1.evecs(:,1));
+const = abs(sum(S2.evecs(:,1))/sum(S1.evecs(:,1)))*S1.nv/S2.nv;
+C12_ini = sum(S2.evecs(:,1))/sum(S1.evecs(:,1))*S1.nv/S2.nv;
 %% Initialize the tree
 fMapTree = tree(S1.name);
 fMapTree = fMapTree.addnode(1, C12_ini);
